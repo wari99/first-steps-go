@@ -4,6 +4,6 @@ import "fmt"
 
 func main(){
   nome := "Jane"
-  fmt.printLn(nome)
+  fmt.Println(nome)
 }
 
