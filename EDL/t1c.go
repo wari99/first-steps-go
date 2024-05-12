@@ -5,15 +5,15 @@ import (
 	"strings"
 )
 
-func contandoVogais(palavra string) int {
+func contarVogais(palavra string) int {
 	contador := 0
 	vogais := "aeiou"
 
-	palavra = strings.ToLower(palavra) 
+	palavra = strings.ToLower(palavra)
 
 	for i := 0; i < len(palavra); i++ {
 		letra := palavra[i]
-		if strings.ContainsRune(vogais, rune(letra)) {
+		if strings.ContainsAny(vogais, string(letra)) {
 			contador++
 		}
 	}
@@ -22,8 +22,8 @@ func contandoVogais(palavra string) int {
 }
 
 func main() {
-	palavra := "Python"
-	totalVogais := contandoVogais(palavra)
+	palavra := "LinguAGEM go"
+	totalVogais := contarVogais(palavra)
 
-	fmt.Printf("Em'%s' tem número de vogais: %d .\n", palavra, totalVogais)
+	fmt.Printf("Na palavra '%s' existem %d vogais.\n", palavra, totalVogais)
 }
